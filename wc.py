@@ -21,3 +21,15 @@ cut_text = jieba.cut(text)
 result = ' '.join(cut_text)
 
 
+wc = WordCloud(
+    font_path = r'.\simhei.ttf',
+    background_color = 'white',
+    width = 500,
+    height = 350,
+    max_font_size = 100,
+    min_font_size = 10,
+)
+wc.generate(result)
+wc.to_file(r'.\wordcloud.png')
+
+
