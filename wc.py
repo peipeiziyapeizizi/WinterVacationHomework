@@ -15,6 +15,9 @@ for page in range(0,226,25):
         csv_write = csv.writer(f)
         csv_write.writerow(paqu)
 
+text = open(r'.\豆瓣.csv',encoding = 'utf_8').read()
 
+cut_text = jieba.cut(text)
+result = ' '.join(cut_text)
 
 
