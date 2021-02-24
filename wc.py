@@ -11,4 +11,10 @@ for page in range(0,226,25):
     response = requests.get(url=url,headers=headers).content.decode('utf-8')
     soup = etree.HTML(response)
     paqu = soup.xpath('//p[@class=" comment-content"]/span[@class="short"]/text()')
-    print(paqu)
+    with open('豆瓣.csv',mode='a',encoding='utf-8',newline="") as f:
+        csv_write = csv.writer(f)
+        csv_write.writerow(paqu)
+
+
+
+
