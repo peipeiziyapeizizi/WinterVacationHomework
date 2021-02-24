@@ -21,7 +21,10 @@ cut_text = jieba.cut(text)
 result = ' '.join(cut_text)
 
 
+color_mask = numpy.array(Image.open('p.png'))
+
 wc = WordCloud(
+    mask=color_mask,
     font_path = r'.\simhei.ttf',
     background_color = 'white',
     width = 500,
